@@ -1,0 +1,14 @@
+Chapter 02 Exercise 01 from Building Java Programs 3rd Edition.
+
+First compile the program: 
+    javac Position.javac
+
+Run the program by passing it 4 arguments
+    Argument 1 = initial position
+    Argument 2 = initial velocity
+    Argument 3 = acceleration 
+    Argument 4 = time
+
+    Example:
+    
+    java Position 8 54 1 43
