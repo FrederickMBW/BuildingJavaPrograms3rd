@@ -9,7 +9,8 @@ public class SlashFigure {
             }
 
             // Draw the middle
-            for (int j = 0; j < -4 * i + 22; j++) {
+            for (int j = 0; j < -4 * i + 22; j++) { // I Failed here, this only works for a HEIGHT of 6. See Chapter 02
+                                                    // Exercise 17 for fix.
                 System.out.print("!");
             }
 
