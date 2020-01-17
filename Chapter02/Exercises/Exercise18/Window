@@ -1,0 +1,36 @@
+Pseudocode for drawing the window below:
+
++===+===+
+|   |   |
+|   |   |
+|   |   |
++===+===+
+|   |   |
+|   |   |
+|   |   |
++===+===+
+
+Pseudocode:
+
+Create a constant for the SUB_HEIGHT, the height of a single window.
+
+Draw line
+Draw window
+Draw line
+Draw window
+Draw line
+
+Draw line
+    Draw a '+'
+    Draw SUB_HEIGHT number of '='
+    Draw a '+'
+    Draw SUB_HEIGHT number of '='
+    Draw a '+'
+
+Draw window
+    Draw the following three times:
+        Draw a '|'
+        Draw SUB_HEIGHT number of ' '
+        Draw a '|'
+        Draw SUB_HEIGHT number of ' '
+        Draw a '|'
