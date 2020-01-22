@@ -10,9 +10,10 @@ public class PrintPowersOf2 {
     }
 
     public static void printPowersOf2(int power) {
+        int current = 1;
         for (int i = 0; i <= power; i++) {
-            int result = (int) Math.pow(2, i);
-            System.out.print(result + " ");
+            System.out.print(current + " ");
+            current *= 2;
         }
         System.out.println();
     }
