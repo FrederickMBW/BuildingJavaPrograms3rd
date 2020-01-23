@@ -31,13 +31,14 @@ public class CollegeAdmit {
         }
 
         // If the modified SAT score is below zero, print to the console not accepted
+        // This means the SAT score is less than the minimum required SAT score
         for (int i = sat; i < 0; i++) {
             System.out.println("You are NOT accepted");
             return;
         }
 
-        // If the modified GPA score is below zero, print the the console not
-        // accepted
+        // If the modified GPA score is below zero, print the the console not accepted
+        // This means the GPA score is less than the minimum required GPA
         for (int i = convertedGPA; i < 0; i++) {
             System.out.println("You are NOT Accepted");
             return;
