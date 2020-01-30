@@ -19,7 +19,7 @@ public class Pow {
             }
         } else {
             for (int i = 0; i > exp; i--) {
-                result *= (1 / base);
+                result /= base;
             }
         }
 
