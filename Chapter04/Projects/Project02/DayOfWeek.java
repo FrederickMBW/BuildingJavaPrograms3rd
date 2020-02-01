@@ -11,11 +11,11 @@ public class DayOfWeek {
         System.out.print("Year? ");
         int year = console.nextInt();
 
-        // Get the month 
+        // Get the month
         System.out.print("Month? ");
         int month = console.nextInt();
 
-        // Get the day 
+        // Get the day
         System.out.print("Day? ");
         int day = console.nextInt();
 
@@ -74,7 +74,7 @@ public class DayOfWeek {
             } else {
                 return true;
             }
-        } 
+        }
 
         return false;
     }
@@ -84,7 +84,7 @@ public class DayOfWeek {
         if (month < 1 || month > 12) {
             throw new IllegalArgumentException("Not a valid month");
         }
-    
+
         if (month == 2) {
             return 28;
         } else if (month == 4 || month == 6 || month == 9 || month == 11) {
