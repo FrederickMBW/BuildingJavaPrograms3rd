@@ -30,6 +30,11 @@ public class SwapDigits {
         // add the final digit to the number
         result += n * position;
 
+        // Set back to negative if required
+        if (isNegative) {
+            result *= -1;
+        }
+
         // Return the result
         return result;
     }
