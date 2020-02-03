@@ -5,7 +5,7 @@ public class FirstDigit {
         System.out.println(firstDigit(n));
     }
 
-    // Returns the sum of the the digits in the integer
+    // Returns the first digit in the integer
     public static int firstDigit(int n) {
         // Get the absolute value of n
         n = Math.abs(n);
