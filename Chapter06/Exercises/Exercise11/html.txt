@@ -1,0 +1,14 @@
+# A file with some html to test StripHtmlTags
+
+<html>
+<head>
+<title>My Web Page</title>
+</head>
+<body>
+<p>There are many pictures of my cat hero,
+as well as my <b>very cool</b> blog page,
+which contains <font color="red">awesome
+stuff about my trip to Vegas.</p>
+Here's my cat now:<img arc="cat.jpg">
+</body>
+</html>
