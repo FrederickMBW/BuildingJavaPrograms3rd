@@ -11,7 +11,7 @@ public class StripComments {
     }
 
     // Strip the comments from a file and print to the console
-    // I assume a // comment is never inside of a /* */ comment
+    // I assume a // comment never comes for before a /* */ comment
     public static void stripComments(Scanner input) {
         while (input.hasNextLine()) {
             String line = input.nextLine();
