@@ -1,32 +1,40 @@
+import java.util.Arrays;
+
 // Tested on Practice it
 // https://practiceit.cs.washington.edu/\
 
 public class Contains {
+    public static void main(String[] args) {
+        int[] list1 = {1, 6, 2, 1, 4, 1, 2, 1, 8};
+        int[] list2 = {1, 2, 1};
+        contains(list1, list2);
+    }
 
-    // Checks if all the values in list2 to appear in list1 in the same order
+    // Checks if list1 contains list2
+    // Returns if if list1 contains list2
+    // Returns false otherwise
     public static boolean contains(int[] list1, int[] list2) {
-        // Go through every element in list two
-        // Check that every element in list2 appears in list1 in the same order
-        int list1Position = 0;
-        for (int i = 0; i < list2.length; i++) {   
-            list1Position = indexAfter(list1, list2[i], list1Position) + 1;
+        for (int i = 0; i < list1.length - list2.length + 1; i++) {   
+            if (equals(Arrays.copyOfRange(list1, i, i + list2.length).equals(list2), list2) {
+                return true;
+            }
+        }
 
-            if (list1Position == 0) {
+        return false;
+    }
+
+    // Returns true if two arrays are the same
+    public static boolean equals(int[] a1, int[] a2) {
+        if (a1.length != a2.length) {
+            return false;
+        }
+
+        for (int i = 0; i < a1.length; i++) {
+            if (a1[i] != a2[i]) {
                 return false;
             }
         }
 
         return true;
-    }
-
-    // Returns the first index that n appears in an array at or after the given index
-    // Returns -1 if not found
-    public static int indexAfter(int[] list, int n, int index) {
-        for (int i = index; i < list.length; i++) {
-            if (list[i] == n) {
-                return i;
-            }
-        }
-        return -1;
     }
 }
