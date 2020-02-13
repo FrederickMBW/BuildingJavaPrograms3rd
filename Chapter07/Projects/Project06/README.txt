@@ -1,0 +1,1 @@
+Skipping Chapter 07 Project 06
