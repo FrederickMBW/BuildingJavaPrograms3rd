@@ -27,7 +27,7 @@ public class IsMagicSquare {
         // Return false if any of the rows do not add up to topRowSum
         for (int row = 1; row < a.length; row++) {
             int sum = 0;
-            for (int column = 0; column < a[row].length; column++) {
+            for (int column = 0; column < a.length; column++) {
                 sum += a[row][column];
             }
             if (sum != topRowSum) {
@@ -38,7 +38,7 @@ public class IsMagicSquare {
         // Return false if any of the columns do not add up to TopRowSum
         for (int column = 0; column < a.length; column++) {
             int sum = 0;
-            for (int row = 0; row < a[0].length; row++) {
+            for (int row = 0; row < a.length; row++) {
                 sum += a[row][column];
             }
             if (sum != topRowSum) {
