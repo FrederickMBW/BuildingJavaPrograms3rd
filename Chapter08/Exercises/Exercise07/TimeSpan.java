@@ -31,6 +31,15 @@ public class TimeSpan {
         this.totalMinutes -= other.totalMinutes;
     }
 
+    // Scales the timespace
+    public void scale(int factor) {
+        if (factor < 1) {
+            throw new IllegalArgumentException();
+        }
+
+        totalMinutes *= factor;
+    }
+
     // returns a String for this time span
     public String toString() {
         return (totalMinutes / MINUTES_PER_HOUR) + "h " + (totalMinutes & MINUTES_PER_HOUR) + "m";
