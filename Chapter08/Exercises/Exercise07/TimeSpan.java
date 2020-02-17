@@ -33,7 +33,7 @@ public class TimeSpan {
 
     // Scales the timespace
     public void scale(int factor) {
-        if (factor < 1) {
+        if (factor < 0) {
             throw new IllegalArgumentException();
         }
 
