@@ -89,4 +89,13 @@ public class Point {
 
         return (double) (other.y - y) / (other.x - x);
     }
+
+    // Returns true if this point is collinier with the two given points
+    public boolean isCollinear(Point p1, Point p2) {
+        // Get the slopes between this point and the other two points
+        double slope1 = slope(p1);
+        double slope2 = slope(p2);
+
+        return Math.abs(slope1 - slope2) < 0.0001;
+    }
 }
