@@ -75,4 +75,9 @@ public class Point {
     public int manhattanDistance(Point other) {
         return Math.abs(x - other.x) + Math.abs(y - other.y);
     }
+
+    // Returns true if the given point lines up vertically with this point
+    public boolean isVertical(Point other) {
+        return x == other.x;
+    }
 }
