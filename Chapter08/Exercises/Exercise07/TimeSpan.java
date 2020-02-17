@@ -17,6 +17,11 @@ public class TimeSpan {
         totalMinutes += MINUTES_PER_HOUR * hours + minutes;
     }
 
+    // Add the other timespan to this time span
+    public void add(TimeSpan other) {
+        add(0, other.totalMinutes);
+    }
+
     // returns a String for this time span
     public String toString() {
         return (totalMinutes / MINUTES_PER_HOUR) + "h " + (totalMinutes & MINUTES_PER_HOUR) + "m";
