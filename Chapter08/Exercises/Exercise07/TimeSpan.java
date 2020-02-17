@@ -22,6 +22,15 @@ public class TimeSpan {
         add(0, other.totalMinutes);
     }
 
+    // Subtracts the other timespace from this timespace
+    public void subtract(TimeSpan other) {
+        if (other.totalMinutes > this.totalMinutes) {
+            throw new IllegalArgumentException();
+        }
+
+        this.totalMinutes -= other.totalMinutes;
+    }
+
     // returns a String for this time span
     public String toString() {
         return (totalMinutes / MINUTES_PER_HOUR) + "h " + (totalMinutes & MINUTES_PER_HOUR) + "m";
