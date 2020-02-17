@@ -44,4 +44,30 @@ public class Point {
     public void translate(int dx, int dy) {
         setLocation(x + dx, y + dy);
     }
+
+    // Returns the quadrant of the x/y plane the current point falls int
+    public int quadrant() {
+        if (x > 0) {
+            if (y > 0) {
+                return 1;
+            } else if (y < 0) {
+                return 4;
+            }
+        } else if (x < 0) {
+            if (y > 0) {
+                return 2;
+            } else if (y < 0) {
+                return 3;
+            }
+        }
+        return 0;
+    }
+
+    // Negates and swaps x and y coordinates
+    public void flip() {
+        int tempX = x;
+
+        x = -y;
+        y = -tempX;
+    }
 }
