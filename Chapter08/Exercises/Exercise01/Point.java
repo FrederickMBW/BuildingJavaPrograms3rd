@@ -70,4 +70,9 @@ public class Point {
         x = -y;
         y = -tempX;
     }
+
+    // Returns the manhatton distance between this point and the given point
+    public int manhattanDistance(Point other) {
+        return Math.abs(x - other.x) + Math.abs(y - other.y);
+    }
 }
