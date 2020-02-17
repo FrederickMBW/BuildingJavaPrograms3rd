@@ -80,4 +80,13 @@ public class Point {
     public boolean isVertical(Point other) {
         return x == other.x;
     }
+
+    // Returns the slope of a line between this point an another point
+    public double slope(Point other) {
+        if (isVertical(other)) {
+            throw new IllegalArgumentException();
+        }
+
+        return (double) (other.y - y) / (other.x - x);
+    }
 }
