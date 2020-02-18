@@ -45,4 +45,13 @@ public class Rectangle {
     public boolean contains(Point p) {
         return contains(p.x, p.y);
     }
+
+    public Rectangle union(Rectangle rect) {
+        int left = Math.min(x, rect.x);
+        int width = Math.max(x + this.width, rect.x + rect.width) - left;
+        int top = Math.min(y, rect.y);
+        int height = Math.max(y + this.height, rect.y + rect.height) - top;
+
+        return new Rectangle(left, top, width, height);
+    }
 }
