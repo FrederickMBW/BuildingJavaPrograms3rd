@@ -14,7 +14,7 @@ public class Date {
 
     // Create a date when given the year, month, and day
     Date(int year, int month, int day) {
-        if (year < 0 || month < 0 || day < 0) {
+        if (!isValidDate(year, month, day)) {
             throw new IllegalArgumentException();
         }
 
@@ -23,6 +23,35 @@ public class Date {
         addDays(day);
     }
 
+    // Returns true if the given date is valid
+    // Returns false otherwise
+    private boolean isValidDate(int year, int month, int day) {
+        // Check the year
+        if (year < 0) {
+            return false;
+        }
+
+        // Check the month
+        if (month < 1 || month > MONTHS_PER_YEAR) {
+            return false;
+        }
+
+        // Check the day
+        if (day < 1) {
+            return false;
+        }
+
+        if (isLeapYear(year) && month == 2) {
+            return day <= daysInMonth(month) + 1;
+        } else if (day > daysInMonth(month)) {
+            return false;
+        }
+
+        // Congratulations, it is a valid date!
+        return true;
+    }
+
+    
     // Adds the year to the total number of days
     private void addYears(int year) {
         for (int i = 0; i < year; i++) {
