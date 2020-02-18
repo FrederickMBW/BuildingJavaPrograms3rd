@@ -75,4 +75,32 @@ public class RationalNumber {
 
         return n2;
     }
+
+    // Multiplies two rational numbers and returns a new rational number
+    public static RationalNumber multiply(RationalNumber r1, RationalNumber r2) {
+        int num = r1.numerator * r2.numerator;
+        int den = r1.denominator * r2.denominator;
+
+        return new RationalNumber(num, den);
+    }
+
+    // Multiplies this rational number by another rational number
+    // Returns the result of the multiplication as a new RationalNumber
+    public RationalNumber multiply(RationalNumber other) {
+        return multiply(this, other);
+    }
+
+    // Divides two rational numbers and returns a new rational number
+    public static RationalNumber divide(RationalNumber r1, RationalNumber r2) {
+        int num = r1.numerator * r2.denominator;
+        int den = r1.denominator * r2.numerator;
+
+        return new RationalNumber(num, den);
+    }
+
+    // Divides this rational number by another rational number
+    // Returns the result of the division as a new RationalNumber
+    public RationalNumber divide(RationalNumber other) {
+        return divide(this, other);
+    }
 }
