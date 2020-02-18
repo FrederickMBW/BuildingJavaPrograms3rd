@@ -128,4 +128,16 @@ public class RationalNumber {
     public RationalNumber add(RationalNumber other) {
         return add(this, other);
     }
+
+    // Subtract a Rational Number from another Rational Number
+    public static RationalNumber subtract(RationalNumber r1, RationalNumber r2) {
+        RationalNumber inverse = new RationalNumber(-r2.numerator, r2.denominator);
+
+        return add(r1, inverse);
+    }
+
+    // Subtract a rational number from this rational number
+    public RationalNumber subtract(RationalNumber other) {
+        return subtract(this, other);
+    }
 }
