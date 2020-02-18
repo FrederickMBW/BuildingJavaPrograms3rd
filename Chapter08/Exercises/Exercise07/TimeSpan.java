@@ -42,6 +42,6 @@ public class TimeSpan {
 
     // returns a String for this time span
     public String toString() {
-        return (totalMinutes / MINUTES_PER_HOUR) + "h " + (totalMinutes & MINUTES_PER_HOUR) + "m";
+        return (totalMinutes / MINUTES_PER_HOUR) + "h " + (totalMinutes % MINUTES_PER_HOUR) + "m";
     }
 }
