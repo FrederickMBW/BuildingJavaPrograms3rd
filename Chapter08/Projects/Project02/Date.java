@@ -161,11 +161,17 @@ public class Date {
         }
 
         // Find the month
-        while (daysLeft > daysInMonth(month) || isLeapYear(year) && month == 2 && daysLeft > daysInMonth(month) + 1) {
+        for (int i = 1; i < MONTHS_PER_YEAR; i++) {
             if (isLeapYear(year) && month == 2) {
-                daysLeft -= (daysInMonth(month) + 1);
-            } else {
+                if (daysLeft > daysInMonth(month) + 1) {
+                    daysLeft -= (daysInMonth(month) + 1);
+                } else {
+                    break;
+                }
+            } else if (daysLeft > daysInMonth(month)) {
                 daysLeft -= daysInMonth(month);
+            } else {
+                break;
             }
 
             month++;
