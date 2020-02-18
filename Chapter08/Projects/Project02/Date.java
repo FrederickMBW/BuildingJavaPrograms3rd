@@ -189,4 +189,9 @@ public class Date {
         return new int[]{year, month, day};
     }
 
+    // Returns a string representation of the object
+    public String toString() {
+        return String.format("%d/%d/%d", getYear(), getMonth(), getDay());
+    }
+
 }
