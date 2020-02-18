@@ -24,4 +24,8 @@ public class BankAccount {
 
         transactionFee = fee;
     }
+
+    public String toString() {
+        return name + ", " + balance;
+    }
 }
