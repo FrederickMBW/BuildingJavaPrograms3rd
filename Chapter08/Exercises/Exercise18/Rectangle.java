@@ -54,4 +54,16 @@ public class Rectangle {
 
         return new Rectangle(left, top, width, height);
     }
+
+    public Rectangle intersection(Rectangle rect) {
+        int left = Math.max(this.x, rect.x);
+        int top = Math.max(this.y, rect.y);
+        int right = Math.min(this.x + this.width, rect.x + rect.width);
+        int bottom = Math.min(this.y + this.height, rect.y + rect.height);
+
+        int width = Math.max(0, right - left);
+        int height = Math.max(0, bottom - top);
+
+        return new Rectangle(left, top, width, height);
+    }
 }
