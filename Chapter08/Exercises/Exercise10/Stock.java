@@ -39,4 +39,10 @@ public class Stock {
         totalShares += shares;
         totalCost += shares * pricePerShare;
     }
+
+    // Resets this Stocks number of shares purchased and total cost to zer
+    public void clear() {
+        totalShares = 0;
+        totalCost = 0;
+    }
 }
