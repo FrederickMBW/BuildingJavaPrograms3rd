@@ -3,12 +3,25 @@
 public class BankAccount {
     String name;
     double balance;
+    double transactionFee;
 
     public void deposit(double amount) {
         balance += amount;
     }
 
     public void withdraw(double amount) {
-        balance -= amount;
+        if (balance - amount - transactionFee < 0) {
+            return;
+        }
+
+        balance -= amount - transactionFee;
+    }
+
+    public void setTransactionFee(double fee) {
+        if (fee  < 0) {
+            throw new IllegalArgumentException();
+        }
+
+        transactionFee = fee;
     }
 }
