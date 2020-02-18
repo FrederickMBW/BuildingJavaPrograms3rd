@@ -52,6 +52,14 @@ public class RationalNumber {
         }
     }
 
+    // Returns the least common multiple
+    private static int lcm(int n1, int n2) {
+        int gcd = gcd(n1, n2);
+        int product = n1 * n2;
+
+        return product / gcd;
+    }
+
     // Returns the greatest common divisor of two integers
     // Uses Euclid's algorthm
     private static int gcd(int n1, int n2) {
@@ -102,5 +110,22 @@ public class RationalNumber {
     // Returns the result of the division as a new RationalNumber
     public RationalNumber divide(RationalNumber other) {
         return divide(this, other);
+    }
+
+    // Add two rational numbers together
+    public static RationalNumber add(RationalNumber n1, RationalNumber n2) {
+        int commonDenominator = lcm(n1.denominator, n2.denominator);
+
+        int num1 = n1.numerator * commonDenominator / n1.denominator;
+        int num2 = n2.numerator * commonDenominator / n2.denominator;
+
+        int numerator = num1 + num2;
+
+        return new RationalNumber(numerator, commonDenominator);
+    }
+
+    // Add a rational number to this rational number
+    public RationalNumber add(RationalNumber other) {
+        return add(this, other);
     }
 }
