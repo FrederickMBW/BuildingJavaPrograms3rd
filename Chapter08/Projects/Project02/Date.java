@@ -5,11 +5,11 @@ public class Date {
     private static final int DAYS_PER_WEEK = 7;
 
     // The number of days since 0/0/0
-    public int days = 0;
+    private int days;
 
     // Default constructor
     Date() {
-        int days = 0;
+        days = 0;
     }
 
     // Create a date when given the year, month, and day
@@ -18,6 +18,7 @@ public class Date {
             throw new IllegalArgumentException();
         }
 
+        days = 0;
         addYears(year);
         addMonths(year, month);
         addDays(day);
