@@ -1,4 +1,6 @@
 public class Date {
+    private static final int DAYS_PER_YEAR = 365;
+    private static final int DAYS_PER_LEARYEAR = 366;
     private static final int MONTHS_PER_YEAR = 12;
     private static final int DAYS_PER_WEEK = 7;
 
@@ -25,9 +27,9 @@ public class Date {
     private void addYears(int year) {
         for (int i = 0; i < year; i++) {
             if (isLeapYear(i)) {
-                days += 366;
+                days += DAYS_PER_LEARYEAR;
             } else {
-                days += 365;
+                days += DAYS_PER_YEAR;
             }
         }
     }
@@ -72,7 +74,7 @@ public class Date {
             throw new IllegalArgumentException();
         }
 
-        if (month == 1) {
+        if (month == 2) {
             return 28;
         } else if (month == 11 || month == 9 || month == 6 || month == 4) {
             return 30;
@@ -94,5 +96,55 @@ public class Date {
     // Returns the number of days that this Date must be adjusted to make equal to another date
     public int daysTo(Date d) {
         return d.days - this.days;
+    }
+
+    // Returns the day of the month for the date
+    public int getDay() {
+        return getYearMonthDay()[2];
+    }
+
+    // Returns the month for the date
+    public int getMonth() {
+        return getYearMonthDay()[1];
+    }
+
+    // Returns the year for the date
+    public int getYear() {
+        return getYearMonthDay()[0];
+    }
+
+    // Returns an array with the with the year, month, and day
+    private int[] getYearMonthDay() {
+        int daysLeft = days;
+        int year = 0;
+        int month = 1;
+        int day = 0;
+
+        // Find the year
+        while (isLeapYear(year) && daysLeft > DAYS_PER_LEARYEAR || !isLeapYear(year) && daysLeft > DAYS_PER_YEAR) {
+            year++;
+
+            daysLeft -= 365;
+
+            if (isLeapYear(year)) {
+                daysLeft--;
+            }
+        }
+
+        // Find the month
+        while (daysLeft > daysInMonth(month) || isLeapYear(year) && month == 2 && daysLeft > daysInMonth(month) + 1) {
+            if (isLeapYear(year) && month == 2) {
+                daysLeft -= (daysInMonth(month) + 1);
+            } else {
+                daysLeft -= daysInMonth(month);
+            }
+
+            month++;
+        }
+
+        // Find the day
+        day = daysLeft;
+
+        return new int[]{year, month, day};
     }
 }
