@@ -26,7 +26,11 @@ public class BankAccount {
     }
 
     public String toString() {
-        return name + ", " + balance;
+        if (balance >= 0) {
+            return name + String.format(", $%.2f", balance);
+        } else {
+            return name + String.format(", -$%.2f", Math.abs(balance));
+        }
     }
 
     public void transfer(BankAccount other, double amount) {
