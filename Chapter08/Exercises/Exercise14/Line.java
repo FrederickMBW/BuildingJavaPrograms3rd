@@ -20,4 +20,12 @@ public class Line {
     public String toString() {
         return "[" + "(" + p1.x + ", " + p1.y + ")" + ", " + "(" + p2.x + ", " + p2.y + ")" + "]";
     }
+
+    public double getSlope() {
+        if (p1.x == p2.x) {
+            throw new IllegalArgumentException();
+        }
+
+        return (double) (p2.y - p1.y) / (p2.x - p1.x);
+    }
 }
