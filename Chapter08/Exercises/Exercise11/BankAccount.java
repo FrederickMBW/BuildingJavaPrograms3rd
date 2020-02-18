@@ -28,4 +28,23 @@ public class BankAccount {
     public String toString() {
         return name + ", " + balance;
     }
+
+    public void transfer(BankAccount other, double amount) {
+        // Do nothing if they can't afford the fee
+        if (balance < 5 || amount == 0) {
+            return;
+        }
+
+        // Subtract the transfer fee of $5 from this account
+        balance -= 5;
+
+        // Transfer the money
+        if (amount > balance) {
+            other.balance += this.balance;
+            this.balance = 0;
+        } else {
+            other.balance += amount;
+            this.balance -= amount;
+        }
+    }
 }
