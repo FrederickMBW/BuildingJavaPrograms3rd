@@ -64,6 +64,11 @@ public class Date {
         }
     }
 
+    // Returns true if this date is in a leap year
+    public boolean isLeapYear() {
+        return isLeapYear(this.getYear());
+    }
+
     // Returns true if a year is a leap year
     private static boolean isLeapYear(int year) {
         if (year < 0) {
@@ -183,4 +188,5 @@ public class Date {
 
         return new int[]{year, month, day};
     }
+
 }
