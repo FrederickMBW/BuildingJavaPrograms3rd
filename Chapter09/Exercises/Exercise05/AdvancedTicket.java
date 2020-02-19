@@ -8,4 +8,8 @@ public class AdvancedTicket extends Ticket {
             super.setPrice(40.0);
         }
     }
+
+    public AdvancedTicket() {
+        super();
+    }
 }
