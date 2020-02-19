@@ -21,4 +21,13 @@ public class Triangle implements Shape {
     public double getPerimeter() {
         return a + b + c;
     }
+
+    // Return true if this object is equal to the given object
+    public boolean equals(Object o) {
+        if (o instanceof Triangle) {
+            Triangle other = (Triangle) o;
+            return this.a == other.a && this.b == other.b && this.c == other.c;
+        }
+        return false;
+    }    
 }
