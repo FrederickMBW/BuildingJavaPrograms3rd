@@ -1,6 +1,10 @@
 public abstract class Ticket {
     int number;
-    double price;
+    double price;\
+
+    public Ticket() {
+        this.number = 0;
+    }
 
     public Ticket(int number) {
         this.number = number;
