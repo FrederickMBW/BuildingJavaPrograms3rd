@@ -3,4 +3,8 @@ public class StudentAdvancedTicket extends AdvancedTicket {
         super(number, numberOfDaysBefore);
         super.setPrice(super.getPrice() / 2);
     }
+
+    public String toString() {
+        return super.toString() + " (ID required)";
+    }
 }
