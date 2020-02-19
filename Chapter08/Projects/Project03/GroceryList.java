@@ -14,7 +14,11 @@ public class GroceryList {
 
     // Adds the given item order to this list if the list has fewer than 10 items
     public void add(GroceryItem item) {
-        if (count < 10) {
+        if (count >= MAX_SIZE) {
+            throw new IllegalStateException();
+        }
+
+        if (count < MAX_SIZE) {
             items[count] = item;
             count++;
         }
