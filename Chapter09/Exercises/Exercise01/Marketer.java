@@ -4,7 +4,7 @@ public class Marketer extends Employee {
         System.out.println("Act now, while supplies last!");
     }
 
-    public void showSalary() {
-        System.out.println("My salary is $50,000.");
+    public double getSalary() {
+        return super.getSalary() + 10000.0;
     }
 }

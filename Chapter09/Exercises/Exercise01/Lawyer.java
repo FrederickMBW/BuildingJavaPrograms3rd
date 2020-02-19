@@ -1,11 +1,11 @@
 // A class to represent lawyers.
 public class Lawyer extends Employee {
-    public void applyForVacation() {
-        System.out.println("Use the pink vacation form.");
+    public int getVacationDays() {
+        return 15;
     }
     
-    public void showVacation() {
-        System.out.println("I receive 3 weeks vacation.");
+    public String getVacationForm() {
+        return "pink";
     }
 
     public void sue() {

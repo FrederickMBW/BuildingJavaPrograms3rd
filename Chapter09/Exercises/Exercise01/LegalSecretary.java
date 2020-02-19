@@ -4,7 +4,7 @@ public class LegalSecretary extends Employee {
         System.out.println("I could file all day!");
     }
 
-    public void showSalary() {
-        System.out.println("My salary is $45,000.");
+    public double getSalary() {
+        return super.getSalary() + 5000.0;
     }
 }
