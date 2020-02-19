@@ -16,4 +16,12 @@ public class Cash implements Asset {
     public void setAmount(double amount) {
         this.amount = amount;
     }
+
+    public boolean equals(Object o) {
+        if (o instanceof Cash) {
+            Cash cash = (Cash) o;
+            return this.amount == cash.amount;
+        } 
+        return false;
+    }
 }
