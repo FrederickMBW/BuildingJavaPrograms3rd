@@ -1,4 +1,4 @@
-public class TimeSpan {
+public class TimeSpan implements Comparable<TimeSpan> {
     private static final int MINUTES_PER_HOUR = 60;
     private int totalMinutes;
 
@@ -43,5 +43,9 @@ public class TimeSpan {
     // returns a String for this time span
     public String toString() {
         return (totalMinutes / MINUTES_PER_HOUR) + "h " + (totalMinutes % MINUTES_PER_HOUR) + "m";
+    }
+
+    public int compareTo(TimeSpan o) {
+        return this.totalMinutes - o.totalMinutes;
     }
 }
