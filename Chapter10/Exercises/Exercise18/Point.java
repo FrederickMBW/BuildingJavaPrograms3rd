@@ -1,10 +1,12 @@
+import java.util.*;
+
 // A Point object represents a pair of (x, y) coordinates.
 
-public class Point {
+public class Point implements Comparable<Point> {
     private int x;
     private int y;
 
-    // Constructs a new Point  at the origin
+    // Constructs a new Point at the origin
     public Point() {
         this(0, 0);
     }
@@ -97,5 +99,13 @@ public class Point {
         double slope2 = slope(p2);
 
         return Math.abs(slope1 - slope2) < 0.0001;
+    }
+
+    public int compareTo(Point o) {
+        if (this.y != o.y) {
+            return this.y - o.y;
+        } else {
+            return this.x - o.x;
+        }
     }
 }
