@@ -16,10 +16,6 @@ public class IndexOf {
         }
 
         for (int i = 0; i < sub.length(); i++) {
-            if (i >= s.length() - 1) {
-                return -1;
-            }
-
             if (s.charAt(index + i) != sub.charAt(i)) {
                 return indexOf(s, sub, index + 1);
             }
